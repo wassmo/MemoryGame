@@ -35,7 +35,7 @@ body {
   background: #fff;
   padding: 1rem;
   border-radius: 4px;
-  box-shadow: 8px 9px 26px 0 rgba(229, 213, 153, 0.5);
+  box-shadow: 8px 9px 26px 0 rgba(255, 255, 255, 0.5);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -68,6 +68,7 @@ body {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-duration: .75s;
+  box-shadow: 5px 2px 20px 0 rgba(2, 157, 175, 0.5);
 }
 
 .deck .card.show {
@@ -82,6 +83,7 @@ body {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-duration: .75s;
+  box-shadow: 5px 2px 20px 0 rgba(240, 124, 25, 0.5);
 }
 
 .deck .card.unmatched {
