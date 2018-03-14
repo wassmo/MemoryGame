@@ -1,8 +1,13 @@
 
-//cards
+//-----cards variables
 
-let card = document.querySelectorAll(".card");
+//node
+let card = document.getElementsByClassName("card");
+console.log(card);
+//array
 let cards = [...card];
+console.log(cards);
+
 
 //deck of cards
 
@@ -17,14 +22,17 @@ let matchedCard = document.querySelectorAll(".match");
 let openedCards = [];
 
 
-//score-moves
+//moves-counter variables
 
 let moves = 0;
 let counter = document.querySelector(".moves");
 
+//stars variables
+
+const stars = document.querySelectorAll(".fa-star");
 
 
-//shuffling cards (Fisher–Yates method)
+//shuffling cards (Fisher–Yates method)-------- do wydzielenia do osobnego elementu
 
 function shuffle (array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -39,8 +47,51 @@ function shuffle (array) {
     return array;
 }
 
+//-------------------------------------------------------------
+
+//Counting moves-----------------------------------------------
+
+function moveCounter(){
+    moves++;
+    counter.innerHTML = moves;
+
+
+    //adding star rating option
+    if (moves > 8 && moves < 12){
+        for( i= 0; i < 3; i++){
+            if(i > 1){
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+    else if (moves > 13){
+        for( i= 0; i < 3; i++){
+            if(i > 0){
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+
+}
+
+//----------------------------------------------------------
+
+
+
+
 //After page loading, the game is starting
 document.onload = startGame();
+
+
+
+
+
+
+
+
+
+
+
 
 
 // starting game
